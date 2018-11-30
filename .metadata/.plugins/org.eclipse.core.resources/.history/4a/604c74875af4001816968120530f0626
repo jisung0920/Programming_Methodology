@@ -1,0 +1,9 @@
+package BankObjects;
+
+public class customer extends user {
+
+	public customer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

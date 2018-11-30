@@ -1,0 +1,15 @@
+package BankObjects;
+
+public class customer extends user {
+
+	String id;
+	String pw;
+	String name;
+	account 
+	public customer(String id, String pw, String name) {
+		super(id, pw);
+		
+		// TODO Auto-generated constructor stub
+	}
+
+}
