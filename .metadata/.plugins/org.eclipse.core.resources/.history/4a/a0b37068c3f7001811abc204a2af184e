@@ -1,0 +1,10 @@
+package BankObjects;
+
+public class Manager extends User {
+
+	public Manager(String id, String pw) {
+		super(id, pw);
+		// TODO Auto-generated constructor stub
+	}
+
+}

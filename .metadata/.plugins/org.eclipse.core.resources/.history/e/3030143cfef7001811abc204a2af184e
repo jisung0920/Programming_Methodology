@@ -1,0 +1,61 @@
+package BankPanelUI;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;;
+
+public class loginWindow extends JPanel implements BankViewSetting {
+	private JButton cLoginBtn,mLoginBtn,newCustomerBtn;
+	private JTextField customerId,customerPw,customerName,managerId,managerPw;
+	public loginWindow() {
+		setLayout(null);
+		
+		valueSetting();
+		
+		viewSetting();
+		
+		this.add(customerId);
+		this.add(customerPw);
+		this.add(customerName);
+		this.add(cLoginBtn);
+		this.add(newCustomerBtn);
+		this.add(managerId);
+		this.add(managerPw);
+		this.add(mLoginBtn);
+	}
+	@Override
+	public void viewSetting() {
+		setBackground(myColor.backgroundCol());
+		cLoginBtn.setSize(100,70);
+		cLoginBtn.setLocation(500,300);
+//		mLoginBtn.setSize(d);
+//		mLoginBtn.setLocation(p);
+//		newCustomerBtn.setSize(d);
+//		newCustomerBtn.setLocation(p);
+//		
+//		customerId.setSize(d);
+//		customerId.setLocation(p);
+//		customerPw.setSize(d);
+//		customerPw.setLocation(p);
+//		customerName.setSize(d);
+//		customerName.setLocation(p);
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void valueSetting() {
+		// TODO Auto-generated method stub
+		cLoginBtn = new JButton("로그인");
+		mLoginBtn = new JButton("관리자모드");
+		newCustomerBtn = new JButton("회원가입");
+		
+		customerId = new JTextField("ID");
+		customerPw = new JTextField("PW");
+		customerName = new JTextField("이름(회원가입 시)");
+		
+		managerId = new JTextField("관리자 ID");
+		managerPw = new JTextField("관리자 PW");
+		
+	}
+	
+}

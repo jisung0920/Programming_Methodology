@@ -1,0 +1,9 @@
+package BankSystems;
+
+public class BankView {
+
+	public BankView() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

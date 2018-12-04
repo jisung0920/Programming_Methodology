@@ -1,0 +1,18 @@
+package BankSystems;
+
+import BankObjects.Manager;
+
+public class BankSystem {
+
+	public static void main(String[] args) {
+		BankReader reader = new BankReader();
+		Manager manager = new Manager("root","0000");
+		BankWriter writer = new BankWriter("test",manager);
+		
+		BankSystemController controller = 
+				new BankSystemController(reader, writer, manager);
+		controller.processFoundBank();
+//		controller.processTransactions();
+	}
+
+}

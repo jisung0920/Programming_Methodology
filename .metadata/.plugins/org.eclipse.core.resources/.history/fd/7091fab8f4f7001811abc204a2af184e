@@ -1,0 +1,11 @@
+package BankSystems;
+
+import javax.swing.JFrame;
+
+public class BankView extends JFrame{
+
+	public BankView() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

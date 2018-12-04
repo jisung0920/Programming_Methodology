@@ -1,0 +1,24 @@
+package BankSystems;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import BankObjects.Manager;
+
+public class BankWriter extends JPanel {
+	private int width = 900;
+	private int height = 600;
+
+	public BankWriter(String title,Manager manager) {
+
+		JFrame f = new JFrame();
+		f.getContentPane().add(this);
+		f.setTitle(title);
+		f.setSize(width, height);
+		f.setBackground(Color.white);
+		f.setVisible(true);
+	}
+
+}

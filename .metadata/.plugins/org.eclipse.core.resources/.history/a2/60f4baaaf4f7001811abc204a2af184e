@@ -1,0 +1,9 @@
+package BankPanelUI;
+
+public class myColor {
+
+	public myColor() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

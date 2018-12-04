@@ -1,0 +1,7 @@
+package BankPanelUI;
+
+import JPanel;
+
+public class useAccount extends JPanel {
+
+}

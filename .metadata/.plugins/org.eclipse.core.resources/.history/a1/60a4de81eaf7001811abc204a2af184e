@@ -1,0 +1,41 @@
+package BankPanelUI;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;;
+
+public class startScreen extends JPanel {
+
+	JButton createBtn;
+	JTextField bankName;
+
+	public startScreen() {
+		setLayout(null);
+
+		bankName = new JTextField("은행이름");
+		createBtn = new JButton("생성");
+		
+		System.out.println("start");
+
+		bankName.setSize(70,20);
+		bankName.setLocation(400,400);
+		this.add(bankName);
+		
+		
+		createBtn.setSize(70,20);
+		createBtn.setLocation(10,10);
+		this.add(createBtn);
+		createBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+	
+}

@@ -1,0 +1,58 @@
+package BankPanelUI;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import BankObjects.Bank;
+import BankObjects.Customer;
+import BankObjects.Manager;;
+
+public class loginScreen extends JPanel {
+
+	JButton cLoginBtn,mLoginBtn,newCustomerBtn;
+	JTextField customerId,customerPw,customerName,managerId,managerPw;
+	Bank bank;
+	public loginScreen(Manager manager) {
+		bank = manager.getBank();
+		
+		setLayout(null);
+		cLoginBtn = new JButton();
+		mLoginBtn = new JButton();
+		newCustomerBtn = new JButton();
+		
+		customerId = new JTextField();
+		customerPw = new JTextField();
+		customerName = new JTextField();
+		
+		managerId = new JTextField();
+		managerPw = new JTextField();
+		
+		this.add(customerId);
+		this.add(customerPw);
+		this.add(customerName);
+		this.add(cLoginBtn);
+		this.add(newCustomerBtn);
+		this.add(managerId);
+		this.add(managerPw);
+		this.add(mLoginBtn);
+		
+		
+		newCustomerBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Customer customer = new Customer(customerId.getText().toString(),customerPw.getText().toString()
+						,customerName.getText().toString());
+				bank.getCustomers().add(customer);
+				System.out.println("customer");
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+	}
+}

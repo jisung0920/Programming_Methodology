@@ -1,0 +1,24 @@
+package BankObjects;
+
+import java.sql.Date;
+
+public class Transaction {
+	private Date time;
+	private int amount;
+	private String depositId;
+	private String withdrawId;
+	public Transaction(Date time, int amount, String depositId, String withdrawId) {
+		this.time = time;
+		this.amount = amount;
+		this.depositId = depositId;
+		this.withdrawId = withdrawId;
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		String record;
+		record =this.time + "|" + this.amount+"|"+this.withdrawId+"->"+this.depositId;
+		return record;
+	}
+}

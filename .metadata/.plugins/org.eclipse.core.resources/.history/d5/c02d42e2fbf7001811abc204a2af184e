@@ -1,0 +1,106 @@
+package BankSystems;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import BankObjects.Manager;
+import BankPanelUI.loginScreen;
+import BankPanelUI.startScreen;
+
+public class BankWriter extends JFrame {
+	private int width = 900;
+	private int height = 600;
+	private startScreen start;
+	private loginScreen login;
+	
+	
+	
+	public BankWriter(String title,Manager manager) {
+		setTitle(title);
+		
+		
+		setSize(width, height);
+		setBackground(Color.white);
+		start = new startScreen(this);
+		add(start);
+		setStart(start);
+		setLogin(new loginScreen(this,manager));
+	
+		setVisible(true);
+		addWindowListener(new WindowListener() {
+			
+			@Override
+			public void windowOpened(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowIconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowDeiconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+				
+			}
+			
+			@Override
+			public void windowClosed(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowActivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+	public void startTologin() {
+		getContentPane().removeAll();
+		getContentPane().add(login);
+		revalidate();
+		repaint();
+	}
+
+	public startScreen getStart() {
+		return start;
+	}
+
+	public void setStart(startScreen start) {
+		this.start = start;
+	}
+
+	public loginScreen getLogin() {
+		return login;
+	}
+
+	public void setLogin(loginScreen login) {
+		this.login = login;
+	}
+}
