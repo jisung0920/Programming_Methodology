@@ -1,8 +1,8 @@
 package BankPanelUI;
 
-import javax.swing.JPanel;;
+import javax.swing.JPanel;
 
-public class useAccount extends JPanel  implements BankViewSetting {
+public class managerMain extends JPanel implements BankViewSetting{
 
 	@Override
 	public void viewSetting() {
@@ -12,12 +12,6 @@ public class useAccount extends JPanel  implements BankViewSetting {
 
 	@Override
 	public void valueSetting() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addToFrame() {
 		// TODO Auto-generated method stub
 		
 	}

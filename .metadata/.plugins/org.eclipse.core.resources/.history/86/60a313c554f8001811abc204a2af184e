@@ -40,12 +40,6 @@ public class startBanking extends JPanel implements BankViewSetting{
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public void addToFrame() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	public JButton getCreateBtn() {
 		return createBtn;
 	}
@@ -58,7 +52,6 @@ public class startBanking extends JPanel implements BankViewSetting{
 	public void setBankName(JTextField bankName) {
 		this.bankName = bankName;
 	}
-	
 	
 	
 

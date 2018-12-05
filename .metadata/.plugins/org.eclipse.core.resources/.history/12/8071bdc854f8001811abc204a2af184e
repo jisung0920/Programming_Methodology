@@ -14,7 +14,14 @@ public class loginWindow extends JPanel implements BankViewSetting {
 		
 		viewSetting();
 		
-		
+		this.add(customerId);
+		this.add(customerPw);
+		this.add(customerName);
+		this.add(cLoginBtn);
+		this.add(newCustomerBtn);
+		this.add(managerId);
+		this.add(managerPw);
+		this.add(mLoginBtn);
 	}
 	@Override
 	public void viewSetting() {
@@ -54,19 +61,6 @@ public class loginWindow extends JPanel implements BankViewSetting {
 		
 		managerId = new JTextField("관리자 ID(root)");
 		managerPw = new JTextField("관리자 PW(0000)");
-		
-	}
-	@Override
-	public void addToFrame() {
-		// TODO Auto-generated method stub
-		this.add(customerId);
-		this.add(customerPw);
-		this.add(customerName);
-		this.add(cLoginBtn);
-		this.add(newCustomerBtn);
-		this.add(managerId);
-		this.add(managerPw);
-		this.add(mLoginBtn);
 		
 	}
 	public JButton getcLoginBtn() {

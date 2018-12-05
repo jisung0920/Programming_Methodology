@@ -2,7 +2,25 @@ package BankPanelUI;
 
 import javax.swing.JPanel;
 
-public class createAccount extends JPanel {
+public class createAccount extends JPanel implements BankViewSetting {
+
+	@Override
+	public void viewSetting() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void valueSetting() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addToFrame() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 }

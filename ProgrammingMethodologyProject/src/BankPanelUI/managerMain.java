@@ -15,5 +15,10 @@ public class managerMain extends JPanel implements BankViewSetting{
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public void addToFrame() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
