@@ -1,0 +1,96 @@
+package BankPanelUI;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class customerMain extends JPanel  implements BankViewSetting {
+
+	private JButton createAccountBtn,selectBtn,deleteBtn,depositBtn,withdrawBtn;
+	private JLabel accountLabel,balanceLabel,idLabel;
+	private JTextField amountValue;
+	private JList accountList,transactionList;
+	private boolean mode;
+	
+	public customerMain() {
+		setLayout(null);
+	}
+	@Override
+	public void viewSetting() {
+		// TODO Auto-generated method stub
+		setBackground(myColor.backgroundCol());
+		createAccountBtn.setSize(140,60);
+		createAccountBtn.setLocation(140,90);
+		
+		selectBtn.setSize(100,60);
+		selectBtn.setLocation(140,160);
+		
+		deleteBtn.setSize(100,50);
+		deleteBtn.setLocation(270,160);
+		
+		accountList.setSize(230,340);
+		accountList.setLocation(140,300);
+		
+		accountLabel.setSize(80,50);
+		accountLabel.setLocation(400,250);
+		
+		depositBtn.setSize(60,60);
+		depositBtn.setLocation(790,170);
+		
+		withdrawBtn.setSize(60,60);
+		withdrawBtn.setLocation(860,170);
+		
+		balanceLabel.setSize(180,60);
+		balanceLabel.setLocation(740,90);
+		
+		idLabel.setSize(130,60);
+		idLabel.setLocation(600,90);
+		
+		transactionList.setSize(320,290);
+		transactionList.setLocation(600,300);
+		
+		
+		
+	}
+
+	@Override
+	public void valueSetting() {
+		// TODO Auto-generated method stub
+		
+		createAccountBtn = new JButton("계좌생성");
+		selectBtn = new JButton("계좌선택");
+		deleteBtn = new JButton("계좌삭제");
+		depositBtn = new JButton("입금");
+		withdrawBtn = new JButton("출금");
+		accountLabel = new JLabel("계좌 ID");
+		balanceLabel = new JLabel("잔액 : ");
+		idLabel = new JLabel("");
+		amountValue = new JTextField();
+		accountList = new JList();
+		transactionList = new JList();
+		
+	}
+
+	@Override
+	public void addToPanel() {
+		// TODO Auto-generated method stub
+		
+		this.add(createAccountBtn);
+		this.add(selectBtn);
+		this.add(deleteBtn);
+		this.add(depositBtn);
+		this.add(withdrawBtn);
+		this.add(accountLabel);
+		this.add(balanceLabel);
+		this.add(idLabel);
+		this.add(amountValue);
+		this.add(accountList);
+		this.add(transactionList);
+		
+	}
+
+
+}

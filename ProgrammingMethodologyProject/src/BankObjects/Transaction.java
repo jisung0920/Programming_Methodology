@@ -1,73 +1,43 @@
 package BankObjects;
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Transaction {
+
+	private int type;
+	/* 0 : deposit
+	 * 1 : withdraw
+	 * 2 : transfer */
 	private Date time;
 	private int amount;
-	private String depositId;
-	private String withdrawId;
-	public Transaction(Date time, int amount, String depositId, String withdrawId) {
-		this.time = time;
+	private String myId,toId;
+	public Transaction(int type,Date date,int amount,String from, String to) {
+		this.type = type;
+		this.time = date;
 		this.amount = amount;
-		this.depositId = depositId;
-		this.withdrawId = withdrawId;
+		this.myId = from;
+		this.toId = to;
+		// TODO Auto-generated constructor stub
+		
 	}
-
-	
-	public String getTransactionInfo() {
-		String record;
-		record =this.time + "|" + this.amount+"|"+this.withdrawId+"->"+this.depositId;
-		return record;
-	}
-
-	
-	
-	public Date getTime() {
-		return time;
-	}
-
-
-
-	public void setTime(Date time) {
-		this.time = time;
-	}
-
-
-
-	public int getAmount() {
-		return amount;
-	}
-
-
-
-	public void setAmount(int amount) {
+	public Transaction(int type,Date date,int amount,String myId) {
+		this.type = type;
+		this.time = date;
 		this.amount = amount;
+		this.myId = myId;
 	}
 
-
-
-	public String getDepositId() {
-		return depositId;
+	public String getTrascationInfo() {
+		SimpleDateFormat dateformat = new SimpleDateFormat("hh:mm:ss");
+		String information = myId.substring(0,9) +" | "+dateformat.format(this.time) +" | "+this.amount+ " | ";
+		if(this.type==0) {
+			return information+":입";
+		}else if(this.type==1) {
+			return information+":출";			
+		}
+		else
+			return information+":이체"+" - "+this.toId;
 	}
-
-
-
-	public void setDepositId(String depositId) {
-		this.depositId = depositId;
-	}
-
-
-
-	public String getWithdrawId() {
-		return withdrawId;
-	}
-
-
-
-	public void setWithdrawId(String withdrawId) {
-		this.withdrawId = withdrawId;
-	}
-
 	
 }

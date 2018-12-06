@@ -1,0 +1,81 @@
+package BankPanelUI;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import BankObjects.Bank;
+
+public class managerMain extends JPanel implements BankViewSetting{
+
+	private JLabel chargeLabel,interestLabel,userListLabel;
+	private JTextField chargeValue,interestValue;
+	private JButton settingBtn;
+	private JList<String> userList;
+	
+	public managerMain() {
+		setLayout(null);
+	}
+	
+	@Override
+	public void viewSetting() {
+		// TODO Auto-generated method stub
+		setBackground(myColor.backgroundCol());
+		chargeLabel.setSize(50,50);
+		chargeLabel.setLocation(300,200);
+		
+		interestLabel.setSize(50,50);
+		interestLabel.setLocation(300,250);
+		
+		userListLabel.setSize(50,50);
+		userListLabel.setLocation(600,100);
+		
+		settingBtn.setSize(200,50);
+		settingBtn.setLocation(300,310);
+		
+		chargeValue.setSize(150,50);
+		chargeValue.setLocation(350,200);
+		
+		interestValue.setSize(150,50);
+		interestValue.setLocation(350,250);
+		
+		userList.setSize(150,600);
+		userList.setLocation(600,150);
+	}
+
+	@Override
+	public void valueSetting() {
+		chargeLabel = new JLabel("수수료");
+		interestLabel = new JLabel("이자율");
+		userListLabel = new JLabel("고객 명단");
+		chargeValue = new JTextField();
+		interestValue = new JTextField();
+		settingBtn = new JButton("설정");
+		userList = new JList<String>();
+		// TODO Auto-generated method stub
+		
+	}
+	public void valueSetting(Bank bank) {
+		chargeLabel = new JLabel("수수료");
+		interestLabel = new JLabel("이자율");
+		userListLabel = new JLabel("고객 명단");
+		chargeValue = new JTextField(bank.getCharge()+"");
+		interestValue = new JTextField(bank.getInterest()+"");
+		settingBtn = new JButton("설정");
+		userList = new JList<String>();
+	}
+	@Override
+	public void addToPanel() {
+		// TODO Auto-generated method stub
+		this.add(chargeLabel);
+		this.add(interestLabel);
+		this.add(userListLabel);
+		this.add(chargeValue);
+		this.add(interestValue);
+		this.add(settingBtn);
+		this.add(userList);
+	}
+
+}

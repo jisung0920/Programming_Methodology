@@ -1,0 +1,12 @@
+package BankObjects;
+
+public class NomalAccount extends Account{
+
+	public NomalAccount(String accountId) {
+		super(accountId);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+}

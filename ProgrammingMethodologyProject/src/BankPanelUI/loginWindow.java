@@ -1,5 +1,9 @@
 package BankPanelUI;
 
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;;
@@ -9,32 +13,38 @@ public class loginWindow extends JPanel implements BankViewSetting {
 	private JTextField customerId,customerPw,customerName,managerId,managerPw;
 	public loginWindow() {
 		setLayout(null);
-		
-		valueSetting();
-		
-		viewSetting();
-		
-		
+	}
+	 public void paint(Graphics g){
+		 Image image = new ImageIcon("./image/loginBG.png").getImage();
+
+		 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+		   setOpaque(false);//투명하게
+		   super.paint(g);   
 	}
 	@Override
 	public void viewSetting() {
 		setBackground(myColor.backgroundCol());
-		cLoginBtn.setSize(200,70);
+		cLoginBtn.setSize(200,50);
 		cLoginBtn.setLocation(400,350);
+		
 		mLoginBtn.setSize(80,50);
 		mLoginBtn.setLocation(900,500);
-		newCustomerBtn.setSize(200,70);
-		newCustomerBtn.setLocation(400,420);
 		
-		customerId.setSize(200,50);
-		customerId.setLocation(400,200);
-		customerPw.setSize(200,50);
-		customerPw.setLocation(400,250);
-		customerName.setSize(200,50);
-		customerName.setLocation(400,300);
+		newCustomerBtn.setSize(200,50);
+		newCustomerBtn.setLocation(400,400);
+		
+		customerId.setSize(130,50);
+		customerId.setLocation(470,200);
+		
+		customerPw.setSize(130,50);
+		customerPw.setLocation(470,250);
+		
+		customerName.setSize(130,50);
+		customerName.setLocation(470,300);
 		
 		managerId.setSize(80,50);
 		managerId.setLocation(900,400);
+		
 		managerPw.setSize(80,50);
 		managerPw.setLocation(900,450);
 		
@@ -48,16 +58,16 @@ public class loginWindow extends JPanel implements BankViewSetting {
 		mLoginBtn = new JButton("관리자모드");
 		newCustomerBtn = new JButton("회원가입");
 		
-		customerId = new JTextField("ID");
-		customerPw = new JTextField("PW");
-		customerName = new JTextField("이름(회원가입 시)");
+		customerId = new JTextField("");
+		customerPw = new JTextField("");
+		customerName = new JTextField("(회원가입 시)");
 		
-		managerId = new JTextField("관리자 ID(root)");
-		managerPw = new JTextField("관리자 PW(0000)");
-		
+		managerId = new JTextField("root");
+		managerPw = new JTextField("0000");
+
 	}
 	@Override
-	public void addToFrame() {
+	public void addToPanel() {
 		// TODO Auto-generated method stub
 		this.add(customerId);
 		this.add(customerPw);

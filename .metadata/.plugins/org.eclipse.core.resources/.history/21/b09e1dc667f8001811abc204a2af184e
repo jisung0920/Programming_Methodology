@@ -1,0 +1,88 @@
+package BankSystems;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import BankObjects.Bank;
+import BankObjects.Customer;
+import BankObjects.Manager;
+import BankPanelUI.loginWindow;
+import BankPanelUI.startBanking;
+
+public class BankSystemController {
+
+	private BankView view;
+	private Manager bankManager;
+	
+	public BankSystemController(BankView view, Manager manager) {
+		this.view  = view;
+		this.bankManager = manager;
+
+	}
+	public void processBanking() {
+		startBanking start = new startBanking();
+		setStartBanking(start);
+		view.attachPanel(start);
+		view.setLogin(new loginWindow());
+	}
+	
+	public void setStartBanking(startBanking panel) {
+		panel.valueSetting();
+		panel.viewSetting();
+		panel.addToFrame();
+		panel.getCreateBtn().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String bankName = panel.getBankName().getText();
+				view.setTitle(bankName);
+				bankManager.makeBank(bankName);
+				view.startTologin();
+			}
+		});	
+	}
+	public void setLoginWindow(loginWindow panel) {
+		panel.valueSetting();
+		panel.viewSetting();
+		panel.addToFrame();
+		panel.getcLoginBtn().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Bank bank = bankManager.getBank();
+//				bank.hasId(id)
+				
+			}
+		});
+		
+		panel.getNewCustomerBtn().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Bank bank = bankManager.getBank();
+				Customer customer = new Customer(view.getLogin().getCustomerId().getText(),view.getLogin().getCustomerPw().getText(),view.getLogin().getCustomerName().getText());
+				bank.getCustomers().add(customer);
+	
+			}
+		});
+		
+		panel.getmLoginBtn().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String id = panel.getManagerId().getText();
+				String pw = panel.getManagerPw().getText();
+				System.out.println(id+"/"+pw);
+				if(bankManager.login(id, pw))
+					view.loginTomanage();
+				else
+					System.out.println("wrong");
+			}
+		});
+	}
+
+
+}

@@ -1,0 +1,195 @@
+package BankPanelUI;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import BankObjects.Customer;
+
+
+public class customerMain extends JPanel  implements BankViewSetting {
+
+	private JButton createAccountBtn,selectBtn,deleteBtn,depositBtn,withdrawBtn,backBtn;
+	private JLabel accountLabel,balanceLabel,idLabel;
+	private JTextField amountValue;
+	private JList accountList,transactionList;
+	private boolean mode;
+	
+	public customerMain() {
+		setLayout(null);
+	}
+	@Override
+	public void viewSetting() {
+		// TODO Auto-generated method stub
+		setBackground(myColor.backgroundCol());
+		createAccountBtn.setSize(230,60);
+		createAccountBtn.setLocation(140,90);
+		
+		selectBtn.setSize(100,60);
+		selectBtn.setLocation(140,160);
+		
+		deleteBtn.setSize(100,60);
+		deleteBtn.setLocation(270,160);
+		
+		accountList.setSize(230,340);
+		accountList.setLocation(140,300);
+		
+		accountLabel.setSize(120,60);
+		accountLabel.setLocation(600,90);
+		
+		depositBtn.setSize(60,60);
+		depositBtn.setLocation(790,170);
+		
+		withdrawBtn.setSize(60,60);
+		withdrawBtn.setLocation(860,170);
+		
+		balanceLabel.setSize(180,60);
+		balanceLabel.setLocation(740,90);
+		
+		amountValue.setSize(180,60);
+		amountValue.setLocation(600,170);
+		
+		idLabel.setSize(130,60);
+		idLabel.setLocation(140,40);
+		
+		transactionList.setSize(320,290);
+		transactionList.setLocation(600,300);
+		
+		backBtn.setSize(100,50);
+		backBtn.setLocation(30,30);
+				
+	}
+
+	@Override
+	public void valueSetting() {
+		// TODO Auto-generated method stub
+		
+		createAccountBtn = new JButton("계좌생성");
+		selectBtn = new JButton("계좌선택");
+		deleteBtn = new JButton("계좌삭제");
+		depositBtn = new JButton("입금");
+		withdrawBtn = new JButton("출금");
+		accountLabel = new JLabel("계좌 ID");
+		balanceLabel = new JLabel("잔액 : ");
+		idLabel = new JLabel("user name");
+		amountValue = new JTextField("00");
+		accountList = new JList();
+		transactionList = new JList();
+		
+	}
+
+	public void valueSetting(Customer user) {
+		createAccountBtn = new JButton("계좌생성");
+		selectBtn = new JButton("계좌선택");
+		deleteBtn = new JButton("계좌삭제");
+		depositBtn = new JButton("입금");
+		withdrawBtn = new JButton("출금");
+		accountLabel = new JLabel("");
+		balanceLabel = new JLabel("");
+		idLabel = new JLabel(user.getName());
+		amountValue = new JTextField("0");
+		accountList = new JList(user.getAccountId().toArray());
+		transactionList = new JList();
+		backBtn = new JButton("로그아웃");
+	}
+	@Override
+	public void addToPanel() {
+		// TODO Auto-generated method stub
+		
+		this.add(createAccountBtn);
+		this.add(selectBtn);
+		this.add(deleteBtn);
+		this.add(depositBtn);
+		this.add(withdrawBtn);
+		this.add(accountLabel);
+		this.add(balanceLabel);
+		this.add(idLabel);
+		this.add(amountValue);
+		this.add(accountList);
+		this.add(transactionList);
+		this.add(backBtn);
+		
+	}
+	public JButton getCreateAccountBtn() {
+		return createAccountBtn;
+	}
+	public void setCreateAccountBtn(JButton createAccountBtn) {
+		this.createAccountBtn = createAccountBtn;
+	}
+	public JButton getSelectBtn() {
+		return selectBtn;
+	}
+	public void setSelectBtn(JButton selectBtn) {
+		this.selectBtn = selectBtn;
+	}
+	public JButton getDeleteBtn() {
+		return deleteBtn;
+	}
+	public void setDeleteBtn(JButton deleteBtn) {
+		this.deleteBtn = deleteBtn;
+	}
+	public JButton getDepositBtn() {
+		return depositBtn;
+	}
+	public void setDepositBtn(JButton depositBtn) {
+		this.depositBtn = depositBtn;
+	}
+	public JButton getWithdrawBtn() {
+		return withdrawBtn;
+	}
+	public void setWithdrawBtn(JButton withdrawBtn) {
+		this.withdrawBtn = withdrawBtn;
+	}
+	public JButton getBackBtn() {
+		return backBtn;
+	}
+	public void setBackBtn(JButton backBtn) {
+		this.backBtn = backBtn;
+	}
+	public JLabel getAccountLabel() {
+		return accountLabel;
+	}
+	public void setAccountLabel(JLabel accountLabel) {
+		this.accountLabel = accountLabel;
+	}
+	public JLabel getBalanceLabel() {
+		return balanceLabel;
+	}
+	public void setBalanceLabel(JLabel balanceLabel) {
+		this.balanceLabel = balanceLabel;
+	}
+	public JLabel getIdLabel() {
+		return idLabel;
+	}
+	public void setIdLabel(JLabel idLabel) {
+		this.idLabel = idLabel;
+	}
+	public JTextField getAmountValue() {
+		return amountValue;
+	}
+	public void setAmountValue(JTextField amountValue) {
+		this.amountValue = amountValue;
+	}
+	public JList getAccountList() {
+		return accountList;
+	}
+	public void setAccountList(JList accountList) {
+		this.accountList = accountList;
+	}
+	public JList getTransactionList() {
+		return transactionList;
+	}
+	public void setTransactionList(JList transactionList) {
+		this.transactionList = transactionList;
+	}
+	public boolean isMode() {
+		return mode;
+	}
+	public void setMode(boolean mode) {
+		this.mode = mode;
+	}
+
+
+}

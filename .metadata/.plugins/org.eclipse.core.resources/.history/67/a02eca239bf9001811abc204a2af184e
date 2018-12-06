@@ -1,0 +1,10 @@
+package BankObjects;
+
+public class WithdrawAccount extends Account {
+
+	public WithdrawAccount(String accountId) {
+		super(accountId);
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -12,6 +12,7 @@ public class Manager extends User {
 		// TODO Auto-generated constructor stub
 	}
 	public void makeBank(String bankName) {
+		System.out.println("make bank");
 		this.bank = new Bank(bankName);
 	}
 	

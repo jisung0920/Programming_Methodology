@@ -1,6 +1,7 @@
 package BankSystems;
 
 import BankObjects.Manager;
+import BankPanelUI.startBanking;
 
 public class BankSystem {
 
@@ -10,7 +11,9 @@ public class BankSystem {
 		
 		BankSystemController controller = 
 				new BankSystemController(view, manager);
-		controller.setButtonAction();
+		
+		controller.processBanking();
+		
 //		controller.processTransactions();
 	}
 

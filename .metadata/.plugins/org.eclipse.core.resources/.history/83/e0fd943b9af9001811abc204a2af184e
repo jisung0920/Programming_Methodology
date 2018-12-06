@@ -1,0 +1,9 @@
+package BankObjects;
+
+public class NomalAccount {
+
+	public NomalAccount() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

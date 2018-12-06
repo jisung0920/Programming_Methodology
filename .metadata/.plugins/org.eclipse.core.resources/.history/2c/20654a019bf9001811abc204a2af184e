@@ -1,0 +1,11 @@
+package BankObjects;
+
+public class DepositAccout extends Account {
+
+	public DepositAccout(String accountId) {
+		super(accountId);
+		// TODO Auto-generated constructor stub
+	}
+
+
+}

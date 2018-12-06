@@ -1,6 +1,6 @@
 package BankObjects;
 
-public class User {
+public abstract class User {
 
 	
 	String id;

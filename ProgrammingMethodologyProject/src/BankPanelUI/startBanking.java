@@ -1,5 +1,11 @@
 package BankPanelUI;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -10,22 +16,24 @@ public class startBanking extends JPanel implements BankViewSetting{
 	public startBanking() {
 		// TODO Auto-generated constructor stub
 		setLayout(null);
-
-		valueSetting();
-
-		viewSetting();
 		
-		this.add(bankName);
-		this.add(createBtn);
-
 	}
+	
+	 public void paint(Graphics g){
+		 Image image = new ImageIcon("./image/startBG.png").getImage();
+
+		 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+		   setOpaque(false);//투명하게
+		   super.paint(g);   
+	}
+	 
 	@Override
 	public void viewSetting() {
 		setBackground(myColor.backgroundCol());
 		
 		bankName.setForeground(myColor.textCol());
 		bankName.setSize(200,50);
-		bankName.setLocation(400,300);
+		bankName.setLocation(400,340);
 		
 		createBtn.setBackground(myColor.buttonCol());
 		createBtn.setSize(200,70);
@@ -35,14 +43,17 @@ public class startBanking extends JPanel implements BankViewSetting{
 	}
 	@Override
 	public void valueSetting() {
-		bankName = new JTextField("은행이름");
+		bankName = new JTextField("");
 		createBtn = new JButton("생성");
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void addToFrame() {
+	public void addToPanel() {
 		// TODO Auto-generated method stub
+		this.add(bankName);
+		this.add(createBtn);
+
 		
 	}
 	
