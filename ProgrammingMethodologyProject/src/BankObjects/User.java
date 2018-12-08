@@ -3,8 +3,8 @@ package BankObjects;
 public abstract class User {
 
 	
-	String id;
-	String pw;
+	public String id;
+	public String pw;
 	public User(String id, String pw) {
 		this.id = id;
 		this.pw = pw;

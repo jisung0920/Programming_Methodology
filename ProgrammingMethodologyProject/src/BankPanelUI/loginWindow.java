@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;;
 
 public class loginWindow extends JPanel implements BankViewSetting {
-	private JButton cLoginBtn,mLoginBtn,newCustomerBtn;
+	private JButton cLoginBtn,mLoginBtn,newCustomerBtn,interestBtn;
 	private JTextField customerId,customerPw,customerName,managerId,managerPw;
 	public loginWindow() {
 		setLayout(null);
@@ -27,8 +27,8 @@ public class loginWindow extends JPanel implements BankViewSetting {
 		cLoginBtn.setSize(200,50);
 		cLoginBtn.setLocation(400,350);
 		
-		mLoginBtn.setSize(80,50);
-		mLoginBtn.setLocation(900,500);
+		mLoginBtn.setSize(80,40);
+		mLoginBtn.setLocation(900,460);
 		
 		newCustomerBtn.setSize(200,50);
 		newCustomerBtn.setLocation(400,400);
@@ -42,12 +42,15 @@ public class loginWindow extends JPanel implements BankViewSetting {
 		customerName.setSize(130,50);
 		customerName.setLocation(470,300);
 		
-		managerId.setSize(80,50);
+		managerId.setSize(80,30);
 		managerId.setLocation(900,400);
 		
-		managerPw.setSize(80,50);
-		managerPw.setLocation(900,450);
+		managerPw.setSize(80,30);
+		managerPw.setLocation(900,430);
 		
+		
+		interestBtn.setSize(50,50);
+		interestBtn.setLocation(940,10);
 		// TODO Auto-generated method stub
 		
 	}
@@ -64,6 +67,8 @@ public class loginWindow extends JPanel implements BankViewSetting {
 		
 		managerId = new JTextField("root");
 		managerPw = new JTextField("0000");
+		
+		interestBtn = new JButton("이자+");
 
 	}
 	@Override
@@ -77,6 +82,7 @@ public class loginWindow extends JPanel implements BankViewSetting {
 		this.add(managerId);
 		this.add(managerPw);
 		this.add(mLoginBtn);
+		this.add(interestBtn);
 		
 	}
 	public JButton getcLoginBtn() {
@@ -126,6 +132,12 @@ public class loginWindow extends JPanel implements BankViewSetting {
 	}
 	public void setManagerPw(JTextField managerPw) {
 		this.managerPw = managerPw;
+	}
+	public JButton getInterestBtn() {
+		return interestBtn;
+	}
+	public void setInterestBtn(JButton interestBtn) {
+		this.interestBtn = interestBtn;
 	}
 	
 	

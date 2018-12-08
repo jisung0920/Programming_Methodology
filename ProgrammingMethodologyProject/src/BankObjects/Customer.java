@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Customer extends User {
 
-	String id;
-	String pw;
-	String name;
-	ArrayList<Account> accounts;
+	private String name;
+	private ArrayList<Account> accounts;
 	
 	public Customer(String id, String pw, String name) {
 		super(id,pw);
-		this.id = id;
-		this.pw = pw;
 		this.name = name;
 		accounts = new ArrayList<Account>();
 		// TODO Auto-generated constructor stub
 	}
 
+	public void addInterestAccount(float interest) {
+		for(int i=0;i<accounts.size();i++)
+			accounts.get(i).addInterest(interest);
+	}
 	public boolean identifyCustomer(String id, String pw) {
 		if(getId().equals(id)&&getPw().equals(pw))
 			return true;
@@ -49,22 +49,6 @@ public class Customer extends User {
 		return accounts.size();
 	}
 	
-	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getPw() {
-		return pw;
-	}
-
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
 
 	public String getName() {
 		return name;

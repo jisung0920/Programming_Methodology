@@ -15,6 +15,10 @@ public class Bank {
 		this.bankName = name;
 		// TODO Auto-generated constructor stub
 	}
+	public void addInterestCustomer() {
+		for(int i=0;i<customers.size();i++)
+			customers.get(i).addInterestAccount(this.interest);
+	}
 
 	public boolean hasId(String id) {
 		for(int i=0;i<customers.size();i++) {

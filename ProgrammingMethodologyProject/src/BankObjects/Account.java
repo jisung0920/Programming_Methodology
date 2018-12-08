@@ -3,10 +3,6 @@ package BankObjects;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.swing.JOptionPane;
-
-import BankSystems.InputProcesser;
-
 public abstract class Account {
 
 	public String accountId;
@@ -17,6 +13,9 @@ public abstract class Account {
 		this.balance = 0;
 		transacInfo = new ArrayList<Transaction>();
 	
+	}
+	public void addInterest(float interest) {
+		this.balance +=this.balance*(interest/100);
 	}
 	
 	

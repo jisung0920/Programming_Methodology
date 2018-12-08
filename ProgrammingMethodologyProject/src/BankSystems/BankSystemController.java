@@ -27,8 +27,8 @@ public class BankSystemController {
 	public BankSystemController(BankView view, Manager manager) {
 		this.view  = view;
 		this.bankManager = manager;
-		customerIdx=0;
-		accountIdx =0;
+		customerIdx=-1;
+		accountIdx =-1;
 
 	}
 	public void processBanking() {
@@ -131,6 +131,15 @@ public class BankSystemController {
 				
 			}
 		});
+		panel.getInterestBtn().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				bankManager.getBank().addInterestCustomer();
+				JOptionPane.showMessageDialog(panel, "이자가 추가되었습니다.\n이자률 : "+bankManager.getBank().getInterest()+"%","이자",JOptionPane.PLAIN_MESSAGE);
+			}
+		});
 	}
 	public void setManagerMain(managerMain panel) {
 		this.view.setManage(panel);
@@ -200,7 +209,7 @@ public class BankSystemController {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 //				view.getCustom().removeAccList();
-				
+				accountIdx=-1;
 				view.goTologin();
 			}
 		});
@@ -266,7 +275,7 @@ public class BankSystemController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(panel.getAccountLabel().getText().equals("")) {
+				if(panel.getAccountLabel().getText().equals("")||accountIdx==-1) {
 					JOptionPane.showMessageDialog(panel, "계좌가 선택되지 않았습니다.","출금 실패",JOptionPane.WARNING_MESSAGE);
 					return ;
 				}
@@ -289,7 +298,7 @@ public class BankSystemController {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(panel.getAccountLabel().getText().equals("")) {
+				if(panel.getAccountLabel().getText().equals("")||accountIdx==-1) {
 					JOptionPane.showMessageDialog(panel, "계좌가 선택되지 않았습니다.","출금 실패",JOptionPane.WARNING_MESSAGE);
 					return ;
 				}
