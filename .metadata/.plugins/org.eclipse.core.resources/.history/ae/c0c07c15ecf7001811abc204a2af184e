@@ -1,8 +1,0 @@
-package BankPanelUI;
-
-import javax.swing.JFrame;;
-
-public class bankFrame extends JFrame {
-	
-	
-}

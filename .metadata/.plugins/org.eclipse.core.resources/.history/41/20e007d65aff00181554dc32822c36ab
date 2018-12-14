@@ -1,0 +1,10 @@
+package BankPanelUI;
+
+public abstract class BankJPanel implements BankViewSetting {
+
+	public BankJPanel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

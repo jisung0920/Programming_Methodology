@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="설정" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="설정성공"/>
+			<item value="설정"/>
+			<item value="back"/>
+			<item value="managerMain"/>
+			<item value="private"/>
+			<item value="usingAccount"/>
+			<item value="usingCustomer"/>
+			<item value="transactionBtn"/>
+			<item value="BankWriter"/>
+		</list>
+		<list key="replacehistory">
+			<item value="public"/>
+			<item value="accountIdx"/>
+			<item value="customerIdx"/>
+			<item value="transferBtn"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="294" key="DIALOG_WIDTH"/>
+		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
+		<item value="408" key="DIALOG_HEIGHT"/>
+		<item value="163" key="DIALOG_X_ORIGIN"/>
+		<item value="309" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

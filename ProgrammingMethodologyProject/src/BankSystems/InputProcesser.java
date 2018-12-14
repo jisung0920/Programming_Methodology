@@ -6,7 +6,7 @@ public class InputProcesser {
 		// TODO Auto-generated constructor stub
 	}
 	static boolean isNumber(String str) {
-		if (str == null || str.equals("")) 
+		if (str == null || str.equals(""))
 			return false;
 	    char tempCh;
 	    int dotCount = 0;	

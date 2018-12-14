@@ -1,7 +1,0 @@
-package BankPanelUI;
-
-import javax.swing.JPanel;;
-
-public class loginWindow extends JPanel {
-
-}

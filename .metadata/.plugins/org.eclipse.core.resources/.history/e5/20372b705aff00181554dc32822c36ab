@@ -1,0 +1,9 @@
+package BankPanelUI;
+
+public class BankJPanel {
+
+	public BankJPanel() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

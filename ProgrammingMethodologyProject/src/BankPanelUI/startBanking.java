@@ -4,23 +4,26 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class startBanking extends JPanel implements BankViewSetting{
+public class startBanking extends BankJPanel{
 	JButton createBtn;
 	JTextField bankName;
 	public startBanking() {
 		// TODO Auto-generated constructor stub
 		setLayout(null);
-		
+
 	}
 	
 	 public void paint(Graphics g){
-		 Image image = new ImageIcon("./image/startBG.png").getImage();
+		 URL imageURL =startBanking.class.getClassLoader().getResource("startBG.png");
+		 Image image = new ImageIcon(imageURL).getImage();
 
 		 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		   setOpaque(false);//투명하게

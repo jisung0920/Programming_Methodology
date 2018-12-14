@@ -1,5 +1,0 @@
-package BankPanelUI;
-
-public interface BankViewSetting {
-
-}

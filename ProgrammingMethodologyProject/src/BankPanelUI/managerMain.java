@@ -2,6 +2,7 @@ package BankPanelUI;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,7 +13,7 @@ import javax.swing.JTextField;
 
 import BankObjects.Bank;
 
-public class managerMain extends JPanel implements BankViewSetting{
+public class managerMain extends BankJPanel{
 
 	private JLabel settingLabel,chargeLabel,interestLabel,userListLabel,tranListLabel;
 	private JTextField chargeValue,interestValue;
@@ -23,7 +24,8 @@ public class managerMain extends JPanel implements BankViewSetting{
 		setLayout(null);
 	}
 	 public void paint(Graphics g){
-		 Image image = new ImageIcon("./image/customBG.png").getImage();
+		 URL imageURL =startBanking.class.getClassLoader().getResource("customBG.png");
+		 Image image = new ImageIcon(imageURL).getImage();
 
 		 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		   setOpaque(false);//투명하게

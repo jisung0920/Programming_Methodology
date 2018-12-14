@@ -1,9 +1,0 @@
-package BankSystems;
-
-public class InputProcesser {
-
-	public InputProcesser() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -1,9 +1,0 @@
-package BankObjects;
-
-public class basicAccount {
-
-	public basicAccount() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

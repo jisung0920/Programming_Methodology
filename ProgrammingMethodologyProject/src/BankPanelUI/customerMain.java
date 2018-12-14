@@ -2,6 +2,7 @@ package BankPanelUI;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,7 +15,7 @@ import BankObjects.Bank;
 import BankObjects.Customer;
 
 
-public class customerMain extends JPanel  implements BankViewSetting {
+public class customerMain extends BankJPanel{
 
 	private JButton createAccountBtn,creDAccountBtn,creWAccountBtn,selectBtn,deleteBtn,depositBtn,withdrawBtn,transferBtn,backBtn;
 	private JLabel accountLabel,balanceLabel,idLabel,myAccLabel,allAccLabel,transacLabel;
@@ -26,7 +27,9 @@ public class customerMain extends JPanel  implements BankViewSetting {
 		setLayout(null);
 	}
 	 public void paint(Graphics g){
-		 Image image = new ImageIcon("./image/customBG.png").getImage();
+		 URL imageURL =startBanking.class.getClassLoader().getResource("customBG.png");
+		 Image image = new ImageIcon(imageURL).getImage();
+
 
 		 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		   setOpaque(false);//투명하게

@@ -2,20 +2,22 @@ package BankPanelUI;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;;
 
-public class loginWindow extends JPanel implements BankViewSetting {
+public class loginWindow extends BankJPanel{
 	private JButton cLoginBtn,mLoginBtn,newCustomerBtn,interestBtn;
 	private JTextField customerId,customerPw,customerName,managerId,managerPw;
 	public loginWindow() {
 		setLayout(null);
 	}
 	 public void paint(Graphics g){
-		 Image image = new ImageIcon("./image/loginBG.png").getImage();
+		 URL imageURL =startBanking.class.getClassLoader().getResource("loginBG.png");
+		 Image image = new ImageIcon(imageURL).getImage();
 
 		 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		   setOpaque(false);//투명하게
